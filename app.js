@@ -54,3 +54,9 @@ const addBookButton = document.getElementById("addBookButton");
 addBookButton.addEventListener("click", () => {
   form.style.visibility = "visible";
 });
+
+const cancelButton = document.getElementById("cancelButton");
+
+cancelButton.addEventListener("click", () => {
+  form.style.visibility = "hidden";
+});
