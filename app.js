@@ -46,3 +46,11 @@ form.addEventListener("submit", (e) => {
 
   displayBooks();
 });
+
+displayBooks();
+
+const addBookButton = document.getElementById("addBookButton");
+
+addBookButton.addEventListener("click", () => {
+  form.style.visibility = "visible";
+});
