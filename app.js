@@ -24,3 +24,20 @@ myLibrary.forEach((book) => {
   container.append(card);
   card.innerHTML = `<p>Title: ${book.title}</p> <p>Author: ${book.author}</p> <p>Pages: ${book.pages}</p> <p>Read: ${book.read}</p>`;
 });
+
+const form = document.querySelector("form");
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const title = document.getElementById("title").value;
+  const author = document.getElementById("author").value;
+  const pages = document.getElementById("pages").value;
+  const read = document.querySelector('input[name="read"]:checked').value;
+
+  const newBook = new Book(title, author, pages, read);
+
+  addBookToLibrary(newBook);
+
+  form.reset();
+});
