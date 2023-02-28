@@ -77,7 +77,7 @@ displayBooks();
 const addBookButton = document.getElementById("addBookButton");
 
 addBookButton.addEventListener("click", () => {
-  form.style.display = "block";
+  form.style.display = "flex";
 });
 
 // Hide form when clicking Cancel button
