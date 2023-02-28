@@ -17,13 +17,16 @@ addBookToLibrary(theHobbit);
 const harryPotter = new Book("Harry Potter", "J.K. Rowling", 450, "not read");
 addBookToLibrary(harryPotter);
 
-const container = document.querySelector("main");
+const container = document.getElementById("cardsContainer");
 
-myLibrary.forEach((book) => {
-  let card = document.createElement("div");
-  container.append(card);
-  card.innerHTML = `<p>Title: ${book.title}</p> <p>Author: ${book.author}</p> <p>Pages: ${book.pages}</p> <p>Read: ${book.read}</p>`;
-});
+function displayBooks() {
+  container.innerHTML = "";
+  myLibrary.forEach((book) => {
+    let card = document.createElement("div");
+    container.append(card);
+    card.innerHTML = `<p>Title: ${book.title}</p> <p>Author: ${book.author}</p> <p>Pages: ${book.pages}</p> <p>Read: ${book.read}</p>`;
+  });
+}
 
 const form = document.querySelector("form");
 
@@ -40,4 +43,6 @@ form.addEventListener("submit", (e) => {
   addBookToLibrary(newBook);
 
   form.reset();
+
+  displayBooks();
 });
