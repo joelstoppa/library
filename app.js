@@ -24,7 +24,10 @@ function displayBooks() {
   myLibrary.forEach((book) => {
     let card = document.createElement("div");
     container.append(card);
+    let removeButton = document.createElement("button");
+    removeButton.innerText = "Remove";
     card.innerHTML = `<p>Title: ${book.title}</p> <p>Author: ${book.author}</p> <p>Pages: ${book.pages}</p> <p>Read: ${book.read}</p>`;
+    card.append(removeButton);
   });
 }
 
