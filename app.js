@@ -9,14 +9,14 @@ function Book(title, author, pages, read) {
   this.title = title;
   this.author = author;
   this.pages = pages;
-  this.read = read;
+  this.read = JSON.parse(read);
 }
 
 // Default books
-const theHobbit = new Book("The Hobbit", "Tolkien", 300, "read");
+const theHobbit = new Book("The Hobbit", "Tolkien", 300, "true");
 addBookToLibrary(theHobbit);
 
-const harryPotter = new Book("Harry Potter", "J.K. Rowling", 450, "not read");
+const harryPotter = new Book("Harry Potter", "J.K. Rowling", 450, "false");
 addBookToLibrary(harryPotter);
 
 // Add book to array
@@ -30,12 +30,22 @@ function displayBooks() {
   myLibrary.forEach((book, index) => {
     let card = document.createElement("div");
     container.append(card);
+
     let removeButton = document.createElement("button");
     removeButton.setAttribute("data-index", index);
     removeButton.classList.add("removeButton");
     removeButton.innerText = "Remove";
-    card.innerHTML = `<p>Title: ${book.title}</p> <p>Author: ${book.author}</p> <p>Pages: ${book.pages}</p> <p>Read: ${book.read}</p>`;
-    card.append(removeButton);
+
+    let readButton = document.createElement("button");
+    readButton.innerText = book.read ? "Read" : "Not read";
+    readButton.classList.add(book.read ? "readButton" : "notReadButton");
+    readButton.addEventListener("click", () => {
+      book.read = !book.read;
+      displayBooks();
+    });
+
+    card.innerHTML = `<p>Title: ${book.title}</p> <p>Author: ${book.author}</p> <p>Pages: ${book.pages}</p>`;
+    card.append(removeButton, readButton);
   });
   // Add event listener to remove buttons
   addClickListener();
