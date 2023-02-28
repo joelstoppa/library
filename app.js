@@ -77,14 +77,14 @@ displayBooks();
 const addBookButton = document.getElementById("addBookButton");
 
 addBookButton.addEventListener("click", () => {
-  form.style.visibility = "visible";
+  form.style.display = "block";
 });
 
 // Hide form when clicking Cancel button
 const cancelButton = document.getElementById("cancelButton");
 
 cancelButton.addEventListener("click", () => {
-  form.style.visibility = "hidden";
+  form.style.display = "none";
 });
 
 //Remove buttons remove the card associated to it's index
