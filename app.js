@@ -9,6 +9,7 @@ function Book(title, author, pages, read) {
   this.title = title;
   this.author = author;
   this.pages = pages;
+  //Transform string value to boolean
   this.read = JSON.parse(read);
 }
 
@@ -45,7 +46,7 @@ function displayBooks() {
     });
 
     card.innerHTML = `<p>Title: ${book.title}</p> <p>Author: ${book.author}</p> <p>Pages: ${book.pages}</p>`;
-    card.append(removeButton, readButton);
+    card.append(readButton, removeButton);
   });
   // Add event listener to remove buttons
   addClickListener();
