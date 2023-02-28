@@ -30,6 +30,7 @@ function displayBooks() {
   container.innerHTML = "";
   myLibrary.forEach((book, index) => {
     let card = document.createElement("div");
+    card.classList.add("cards");
     container.append(card);
 
     let removeButton = document.createElement("button");
