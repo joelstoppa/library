@@ -1,3 +1,199 @@
+:root {
+    --dark-blue: rgb(20, 33, 61);
+    --yellow: rgb(252, 163, 17);
+    --grey: rgb(229, 229, 229);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+/* Header */
+header {
+    font-family: "Bebas Neue", sans-serif ;
+    background-color: var(--dark-blue);
+    color: var(--yellow);
+    font-size: 6rem;
+    height: 15vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+/* Main content */
+main {
+    font-family: "Roboto Mono";
+    display: grid;
+    background-color: var(--grey);
+    height: 80vh;
+    overflow: auto;
+    grid-template-rows: max-content 1fr;
+}
+
+#addBookButton {
+    padding: 1rem 2rem;
+    margin: 2rem;
+    width: 200px;
+    height: 60px;
+    font-size: 20px;
+    font-weight: 900;
+    border: 3px solid var(--dark-blue);
+    color: var(--dark-blue);
+    background-color: var(--yellow);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#addBookButton:hover {
+    border-color: var(--yellow);
+    background-color: var(--dark-blue);
+    color: var(--yellow);
+}
+
+
+/* Cards */
+#cardsContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    justify-content: center;
+}
+
+.cards{
+    background-color: white;
+    font-size: 1.2rem;
+    height: 250px;
+    max-width: 370px;
+    padding: 2rem;
+    border: 2px solid var(--dark-blue);
+    border-radius: 20px;
+    box-shadow: 5px 5px 7px var(--dark-blue);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.readButton,
+.notReadButton,
+.removeButton {
+    align-self: flex-start;
+    width: 220px;
+    padding: 0.5rem 2rem;
+    font-size: 20px;
+    font-weight: 500;
+    border-radius: 20px;
+    border: 3px solid;
+}
+
+.readButton {
+    background-color: var(--yellow);
+}
+
+.notReadButton {
+    background-color: var(--dark-blue);
+    color: var(--yellow);
+}
+
+.removeButton {
+    background-color: var(--dark-blue);
+    color: white;
+}
+
+.removeButton:hover {
+    background-color: white;
+    color: var(--dark-blue);
+    border-color: var(--dark-blue);
+    font-weight: 900;
+}
+
+
+/* Form */
 form {
-    visibility: hidden;
+    display: none;
+    background-color: var(--dark-blue);
+    color: var(--yellow);
+    min-width: max-content;
+    width: 30rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1.4rem;
+    border: 5px solid var(--yellow);
+    border-radius: 20px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    font-size: 20px;
+}
+
+#questionField {
+    display: flex;
+    gap: 15px;
+}
+
+input[type=text],
+input[type=number] {
+    height: 2rem;
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 10px;
+    background-color: var(--grey);
+    color: var(--yellow);
+    border: 3px solid var(--yellow);
+}
+
+input[type=radio] {
+    accent-color: var(--yellow);
+}
+
+input:focus {
+    outline: none;
+}
+
+::placeholder {
+    color: var(--dark-blue);
+}
+
+fieldset {
+    border: 0;
+}
+
+button,
+input[type=submit] {
+    cursor: pointer;
+}
+
+#submitButton,
+#cancelButton {
+    padding: 1rem 2rem;
+    font-size: 20px;
+    border-radius: 10px;
+    border: none;
+    background-color: var(--yellow);
+}
+
+#submitButton:hover,
+#cancelButton:hover {
+    background-color: var(--dark-blue);
+    border: 3px solid var(--yellow);
+    color: var(--yellow);
+}
+
+/* Footer */
+footer {
+    font-family: "Roboto Mono";
+    background-color: var(--dark-blue);
+    height: 5vh;
+    position: relative;
+    color: var(--yellow);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
 }
