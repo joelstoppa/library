@@ -14,11 +14,14 @@ function Book(title, author, pages, read) {
 }
 
 // Default books
-const theHobbit = new Book("The Hobbit", "Tolkien", 300, "true");
+const theHobbit = new Book("The Hobbit", "J.R.R. Tolkien", 300, "false");
 addBookToLibrary(theHobbit);
 
-const harryPotter = new Book("Harry Potter", "J.K. Rowling", 450, "false");
-addBookToLibrary(harryPotter);
+const theIdiot = new Book("The Idiot", "F. Dostoevsky", 718, "true");
+addBookToLibrary(theIdiot);
+
+const shortLife = new Book("On the Shortness of Life", "Seneca", 112, "false");
+addBookToLibrary(shortLife);
 
 // Add book to array
 function addBookToLibrary(Book) {
