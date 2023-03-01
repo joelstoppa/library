@@ -32,15 +32,18 @@ function addBookToLibrary(Book) {
 function displayBooks() {
   container.innerHTML = "";
   myLibrary.forEach((book, index) => {
+    // Create cards
     let card = document.createElement("div");
     card.classList.add("cards");
     container.append(card);
 
+    // Create remove buttons
     let removeButton = document.createElement("button");
     removeButton.setAttribute("data-index", index);
     removeButton.classList.add("removeButton");
     removeButton.innerText = "Remove";
 
+    // Create read status buttons
     let readButton = document.createElement("button");
     readButton.innerText = book.read ? "Status: Read" : "Status: Unread";
     readButton.classList.add(book.read ? "readButton" : "notReadButton");
@@ -49,6 +52,7 @@ function displayBooks() {
       displayBooks();
     });
 
+    // Populate the cards
     card.innerHTML = `<p>Title: ${book.title}</p> <p>Author: ${book.author}</p> <p>Pages: ${book.pages}</p>`;
     card.append(readButton, removeButton);
   });
