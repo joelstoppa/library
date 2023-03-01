@@ -109,5 +109,3 @@ function addClickListener() {
     });
   });
 }
-
-console.table(myLibrary);
