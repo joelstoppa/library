@@ -39,7 +39,7 @@ function displayBooks() {
     removeButton.innerText = "Remove";
 
     let readButton = document.createElement("button");
-    readButton.innerText = book.read ? "Read" : "Not read";
+    readButton.innerText = book.read ? "Status: Read" : "Status: Unread";
     readButton.classList.add(book.read ? "readButton" : "notReadButton");
     readButton.addEventListener("click", () => {
       book.read = !book.read;
