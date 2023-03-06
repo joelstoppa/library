@@ -4,13 +4,14 @@ const form = document.querySelector("form");
 // Array of books
 let myLibrary = [];
 
-// Book constructor
-function Book(title, author, pages, read) {
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  //Transform string value to boolean
-  this.read = JSON.parse(read);
+class Book {
+  constructor(title, author, pages, read) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    //Transform string value to boolean
+    this.read = JSON.parse(read);
+  }
 }
 
 // Default books
